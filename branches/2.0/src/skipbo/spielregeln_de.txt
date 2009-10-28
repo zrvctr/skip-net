@@ -1,0 +1,57 @@
+Spielregeln von Skip-Bo
+
+Skip-Bo ist ein Kartenablagespiel für zwei bis vier Spieler. Es besteht aus 144
+Karten (mit den Zahlen 1-12) und 18 Skip-Bo Karten. 
+
+Ziel des Spiels
+
+Wer als erster Spieler die Karten seines Spielerstapels abgelegt hat, ist Sieger. 
+
+Spielvorbereitung
+
+Jeder Spieler erhält Karten für einen Spielerstapel. Dieser besteht aus 30 Karten,
+wenn mit 2, 3 oder 4 Spielern gespielt wird, und aus 20 Karten, wenn mit 5 oder 6 Spielern gespielt wird.
+Jeder Spieler legt seinen Spielerstapel vor sich hin, wobei die Karten mit dem Gesicht nach unten zeigen.
+Die Karten werden nicht angesehen. Die oberste Karte des Spielerstapels wird umgedreht und
+auf den Stapel gelegt. Die übrigen Karten werden in die Mitte des Tisches gelegt und bilden den Kartenstock. 
+
+Einleitung und Spielbeginn
+
+Karten dürfen vom Spielerstapel nur auf Ablegestapel in der Mitte des Tisches abgelegt werden. Ablagestapel
+werden gebildet, indem auf ihnen Karten in der Reihenfolge 1 bis 12 abgelegt werden.
+Skip-Bo Karten haben die Funktion von Jokern. Sie können jede gewünschte Zahl darstellen.
+Wird eine 12 (oder eine 12 darstellende Skip-Bo Karte) auf einen Ablagestapel gelegt, ist
+dieser vollständig und wird aus dem Spiel genommen. Ein neuer Ablagestapel kann gelegt werden.
+Maximal können 4 Ablagestapel gleichzeitig gebildet werden. Die beiseite gelegten, vollständigen Ablagestapel
+werden gemischt und ersetzen den Kartenstock, wenn von diesem alle Karten aufgebraucht sind.
+Der Spieler zur Linken des Gebers beginnt das Spiel, indem er 5 Karten vom Kartenstock aufnimmt. Hat er
+eine 1 oder eine Skip-Bo-Karte auf der Hand, oder liegt eine dieser Karten zuoberst auf seinem Spielerstapel,
+kann er mit dem Aufbau eines Ablagestapels in der Mitte des Tisches beginnen. Ein Spieler kann in einer Runde
+so viele Karten ablegen wie möglich. Hat er beispielsweise eine weitere 1, kann er einen zweiten Ablagestapel
+beginnen oder auf den ersten eine 2, 3, 4, 5 usw. legen. Legt ein Spieler alle seine Handkarten in
+einer Runde ab, zieht er fünf neue Karten vom Kartenstock und spielt weiter. Kann er keine Karte ablegen,
+oder möchte er es nicht, beendet er seinen Spielzug, indem er eine seiner Handkarten vor sich legt und somit
+einen ersten von vier möglichen, persönlichen Hilfsstapeln bildet. Die Reihenfolge der auf die Hilfsstapel
+abgelegten Karten ist hierbei unerheblich. Das Spiel setzt sich im Uhrzeigersinn fort.
+Ein Spieler beginnt seinen Spielzug, indem er seine Handkarten mit Karten vom Handstock aufüllt, so daß er
+dann wieder 5 Karten auf der Hand hält. Dann legt er so viele Karten, wie er wünscht,auf den Ablagestapel ab.
+Karten können von drei verschiedenen Quellen auf die Ablegestapel gelegt werden:
+
+     die oberste Karte vom Spielerstapel 
+     die oberste Karte eines beliebigen persönlichen Hilfsstapels 
+     die fünf Karten auf der Hand. 
+
+Ein Spielzug wird immer so beendet, dass ein Spieler eine Karte von seiner Hand auf einen seiner persönlichen
+Hilfsstapel ablegt.
+
+Tips zur Taktik
+
+     Ziel des Spieles ist es, die Karten seines Spielerstapels so schnell wie möglich abzulegen. Legen Sie
+     diese deshalb zuerst ab!
+     Sehen Sie sich die Spielerstapel der anderen genau an. Manchmal ist es taktisch klug, eine Karte zu spielen
+     oder nicht zu spielen, um einen anderen Spieler am Ablegen zu hindern.
+     Das Ablegen von Handkarten bzw. der Karten der Hilfsstapel dient in erster Line dazu, die
+     Ablagemöglichkeiten vom Spielerstapel zu erhöhen bzw. die Mitspieler am Ablegen zu hindern.
+
+
+
