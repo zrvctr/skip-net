@@ -15,7 +15,7 @@ import java.util.Vector;
 import skipbo.Karte;
 import skipbo.MyIpResolver;
 import skipbo.NetzNachricht;
-import skipbo.OpenDhtCommunicator;
+import skipbo.ServerFinderService;
 import skipbo.Resource;
 
 /**
@@ -410,7 +410,7 @@ public class SkipBoServer
 
 	class RegisterRefresher extends TimerTask
 	{
-		private OpenDhtCommunicator comm = OpenDhtCommunicator.getInstance();
+		private ServerFinderService comm = ServerFinderService.getInstance();
 		private int spieleranzahl;
 
 		public RegisterRefresher(int spieleranzahl)

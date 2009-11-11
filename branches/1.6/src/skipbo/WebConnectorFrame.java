@@ -137,7 +137,7 @@ public class WebConnectorFrame extends JFrame
 
 	private List<InetAddress> findServers(int gamers) throws Exception
 	{
-		return OpenDhtCommunicator.getInstance().findServer(gamers);
+		return ServerFinderService.getInstance().findServer(gamers);
 	}
 
 	private int getSelectedSpieleranzahl()
