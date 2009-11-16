@@ -4,39 +4,15 @@
  */
 package skipbo;
 
-import java.net.InetAddress;
-import java.util.LinkedList;
-import java.util.List;
+import skipbo.irc.IRCServerFinderService;
 
 public class ServerFinderService
 {
-	/*
-	 * Sammeladresse fuer mehrere Servers in Deutschland. Beim Konnektieren wird
-	 * zufaellig einer ausgewaehlt
-	 */
-	static final private String SERVER = "irc.de.euirc.net";
+	static private IServerFinderService instance = new IRCServerFinderService();
 
-	static private ServerFinderService instance = new ServerFinderService();
-
-	static public ServerFinderService getInstance()
+	static public IServerFinderService getInstance()
 	{
 		return instance;
 	}
 
-	protected ServerFinderService()
-	{
-	}
-
-	public void registerServer(String host, int gamers, int ttl) throws Exception
-	{
-		System.out.println("register server. Gamers: " + gamers);
-		// TODO
-	}
-
-	public List<InetAddress> findServer(int gamers) throws Exception
-	{
-		LinkedList<InetAddress> ret = new LinkedList<InetAddress>();
-		// TODO
-		return ret;
-	}
 }

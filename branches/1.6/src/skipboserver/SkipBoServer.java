@@ -12,6 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
 
+import skipbo.IServerFinderService;
 import skipbo.Karte;
 import skipbo.MyIpResolver;
 import skipbo.NetzNachricht;
@@ -410,7 +411,7 @@ public class SkipBoServer
 
 	class RegisterRefresher extends TimerTask
 	{
-		private ServerFinderService comm = ServerFinderService.getInstance();
+		private IServerFinderService comm = ServerFinderService.getInstance();
 		private int spieleranzahl;
 
 		public RegisterRefresher(int spieleranzahl)
