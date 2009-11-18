@@ -9,7 +9,9 @@ import java.util.List;
 public interface IServerFinderService
 {
 
-	public abstract void registerServer(String host, int gamers, long ttl) throws Exception;
+	public abstract void registerServer(int gamers, int ttl) throws Exception;
+
+	public abstract void unregisterServer() throws Exception;
 
 	public abstract List<String> findServer(int gamers) throws Exception;
 }
