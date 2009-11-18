@@ -4,18 +4,14 @@
  */
 package skipbo;
 
-import java.net.InetAddress;
 import java.util.List;
 
 public interface IServerFinderService
 {
 
-	public abstract void registerServer(String host, int gamers, int ttl) throws Exception;
+	public abstract void registerServer(int gamers, int ttl) throws Exception;
 
-	public abstract List<InetAddress> findServer(int gamers) throws Exception;
+	public abstract void unregisterServer() throws Exception;
 
-	public void open() throws Exception;
-
-	public void close();
-
+	public abstract List<String> findServer(int gamers) throws Exception;
 }

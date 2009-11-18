@@ -226,10 +226,11 @@ public class SkipBo
 
 	public void zugSenden(String src_name, int src_feld, String dest_name, int dest_feld)
 	{
-		System.out.println(src_name + ": " + src_feld + "(" + skipboFenster.getKarte(src_name, src_feld) + ")" + " auf " + dest_name + ": " + dest_feld + "(" + skipboFenster.getKarte(dest_name, dest_feld) + ")");
+		System.out.println(src_name + ": " + src_feld + "(" + skipboFenster.getKarte(src_name, src_feld) + ")" + " auf " + dest_name + ": " + dest_feld + "("
+				+ skipboFenster.getKarte(dest_name, dest_feld) + ")");
 		if ((dest_name == "Center" && skipboFenster.getKarte(src_name, src_feld) != Karte.JOKER && (skipboFenster.getKarte(src_name, src_feld) - 1) != skipboFenster.getKarte(dest_name, dest_feld))
-				|| (skipboFenster.getKarte(src_name, src_feld) == Karte.NOPE)) throw new RuntimeException("Nicht erlaubte Zug: Karte " + skipboFenster.getKarte(src_name, src_feld) + " wird auf Karte " + skipboFenster.getKarte(dest_name, dest_feld)
-				+ " gelegt.");
+				|| (skipboFenster.getKarte(src_name, src_feld) == Karte.NOPE)) throw new RuntimeException("Nicht erlaubte Zug: Karte " + skipboFenster.getKarte(src_name, src_feld) + " wird auf Karte "
+				+ skipboFenster.getKarte(dest_name, dest_feld) + " gelegt.");
 		NetzNachricht nn = new NetzNachricht(NetzNachricht.MOVE_KARTE);
 		nn.spielername_source = src_name;
 		nn.spielername_dest = dest_name;
@@ -255,7 +256,8 @@ public class SkipBo
 	{
 		if (connected)
 		{
-			int opt = JOptionPane.showOptionDialog(skipboFenster, Resource.getString("frage2"), Resource.getString("warnung"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+			int opt = JOptionPane.showOptionDialog(skipboFenster, Resource.getString("frage2"), Resource.getString("warnung"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null,
+					null);
 			if (opt == JOptionPane.OK_OPTION)
 			{
 				if (server != null) server.stopServer(Resource.getString("msg2") + " " + spielername + " " + Resource.getString("beendet")); // falls
@@ -300,7 +302,8 @@ public class SkipBo
 			JOptionPane.showMessageDialog(skipboFenster, Resource.getString("serverstart_fehlgeschlagen") + "\n" + e.getLocalizedMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
-		if (showHostAdresse) JOptionPane.showMessageDialog(skipboFenster, Resource.getString("serverstart_erfolgreich") + "\n" + Resource.getString("adresse1") + addr, "Server gestartet", JOptionPane.INFORMATION_MESSAGE);
+		if (showHostAdresse) JOptionPane.showMessageDialog(skipboFenster, Resource.getString("serverstart_erfolgreich") + "\n" + Resource.getString("adresse1") + addr, "Server gestartet",
+				JOptionPane.INFORMATION_MESSAGE);
 		return connectToServer("localhost");
 	}
 
@@ -314,7 +317,8 @@ public class SkipBo
 			return true;
 		} catch (Throwable e)
 		{
-			JOptionPane.showMessageDialog(skipboFenster, Resource.getString("msg21") + System.getProperty("java.version") + Resource.getString("msg22"), Resource.getString("warnung"), JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(skipboFenster, Resource.getString("msg21") + System.getProperty("java.version") + Resource.getString("msg22"), Resource.getString("warnung"),
+					JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 	}
@@ -329,7 +333,8 @@ public class SkipBo
 	{
 		if (connected)
 		{
-			int opt = JOptionPane.showOptionDialog(skipboFenster, Resource.getString("msg23"), Resource.getString("warnung"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+			int opt = JOptionPane
+					.showOptionDialog(skipboFenster, Resource.getString("msg23"), Resource.getString("warnung"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
 			if (opt == JOptionPane.OK_OPTION)
 			{
 				aktuellesSpielBeenden();
@@ -349,8 +354,8 @@ public class SkipBo
 		{
 			server = new SkipBoServer(false);
 			int port = server.startServer(spieler);
-			connectToServer("localhost");
 			server.registerServer(spieler);
+			connectToServer("localhost");
 		} catch (IOException e)
 		{
 			if (server != null) server.stopServer(Resource.getString("msg25"));

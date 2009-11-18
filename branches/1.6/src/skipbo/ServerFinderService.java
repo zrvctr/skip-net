@@ -4,14 +4,26 @@
  */
 package skipbo;
 
-import skipbo.irc.IRCServerFinderService;
+import java.net.MalformedURLException;
+
+import skipbo.xmlrpc.XmlRpcServerFinderServiceImpl;
 
 public class ServerFinderService
 {
-	static private IServerFinderService instance = new IRCServerFinderService();
+	static private IServerFinderService instance;
 
 	static public IServerFinderService getInstance()
 	{
+		if (instance == null)
+		{
+			try
+			{
+				instance = new XmlRpcServerFinderServiceImpl();
+			} catch (MalformedURLException e)
+			{
+				e.printStackTrace();
+			}
+		}
 		return instance;
 	}
 

@@ -14,10 +14,9 @@ import java.util.Vector;
 
 import skipbo.IServerFinderService;
 import skipbo.Karte;
-import skipbo.MyIpResolver;
 import skipbo.NetzNachricht;
-import skipbo.ServerFinderService;
 import skipbo.Resource;
+import skipbo.ServerFinderService;
 
 /**
  * �berschrift: Beschreibung: Hauptklasse des Skip-Bo Servers Copyright:
@@ -48,7 +47,6 @@ public class SkipBoServer
 	// SkipBoUrlCommunicator();
 	private boolean registered = false;
 	private Timer timer = new Timer();
-	private String myHost;
 
 	/**
 	 */
@@ -250,8 +248,8 @@ public class SkipBoServer
 		boolean success = false;
 		/*
 		 * while(!success) { try { connector = new Connector(this, port);
-		 * success = true; }catch(IOException e) { versuch++; port++; if(versuch ==
-		 * 10) throw e; //10 Versuche } }
+		 * success = true; }catch(IOException e) { versuch++; port++; if(versuch
+		 * == 10) throw e; //10 Versuche } }
 		 */
 		connector = new Connector(this, DEFAULT_PORT);
 		connected = true;
@@ -305,6 +303,13 @@ public class SkipBoServer
 		{
 			registered = false;
 		}
+		try
+		{
+			ServerFinderService.getInstance().unregisterServer();
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	public synchronized void stopServer(String ursache)
@@ -341,7 +346,8 @@ public class SkipBoServer
 	/*
 	 * private void disconnectCommunicators() { Enumeration comms =
 	 * communicators.keys(); while(comms.hasMoreElements()) {
-	 * ((ServerCommunicator)communicators.get(comms.nextElement())).stopCommunicator(); } }
+	 * ((ServerCommunicator
+	 * )communicators.get(comms.nextElement())).stopCommunicator(); } }
 	 */
 	// Mischen und bewegen Karten aus used_karten in kartenpool
 	private void neuMischen()
@@ -351,7 +357,8 @@ public class SkipBoServer
 		Collections.shuffle(kartenpool);
 		/*
 		 * while(!used_karten.isEmpty()) { for(int i=0;i
-		 * <162;i++)kartenpool.add(used_karten.remove(rnd.nextInt(used_karten.size()))); }
+		 * <162;i++)kartenpool.add(
+		 * used_karten.remove(rnd.nextInt(used_karten.size()))); }
 		 */
 	}
 
@@ -402,10 +409,6 @@ public class SkipBoServer
 	public void registerServer(int spieleranzahl) throws IOException
 	{
 		registered = true;
-		if (myHost == null || myHost.length() < 8)
-		{
-			myHost = MyIpResolver.resolveMyIp();
-		}
 		timer.schedule(new RegisterRefresher(spieleranzahl), 0, 10000);
 	}
 
@@ -422,12 +425,6 @@ public class SkipBoServer
 		@Override
 		public void run()
 		{
-			if (myHost == null || myHost.length() < 8)
-			{
-				System.out.println("invalid host name: " + myHost);
-				cancel();
-				return;
-			}
 			try
 			{
 				if (!registered)
@@ -435,9 +432,11 @@ public class SkipBoServer
 					cancel();
 					return;
 				}
-				comm.registerServer(myHost, spieleranzahl, 10);
+				System.out.println("Register local server");
+				comm.registerServer(spieleranzahl, 15000);
 			} catch (Exception e)
 			{
+				e.printStackTrace();
 				stopServer(e.getLocalizedMessage());
 			}
 		}

@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.InetAddress;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -137,7 +138,12 @@ public class WebConnectorFrame extends JFrame
 
 	private List<InetAddress> findServers(int gamers) throws Exception
 	{
-		return ServerFinderService.getInstance().findServer(gamers);
+		List<InetAddress> ret = new ArrayList<InetAddress>();
+		for (String host : ServerFinderService.getInstance().findServer(gamers))
+		{
+			ret.add(InetAddress.getByName(host));
+		}
+		return ret;
 	}
 
 	private int getSelectedSpieleranzahl()
