@@ -57,7 +57,7 @@ Spielregeln=Spielregeln
 Info=Info
 Nachrichtenausgabe=Nachrichtenausgabe
 item36=Gegen Computer spielen
-info_text=Skip-Net Version 1.6.0\n 2001-2008 Paul Burlov
+info_text=Skip-Net Version 1.7.0\n 2001-2009 Paul Burlov\nThis product includes software developed by The Apache Software Foundation (http://www.apache.org/)
 
 #SkipBoUrlCommunicator
 err40=Der gestartete Server kann nicht registriert werden!

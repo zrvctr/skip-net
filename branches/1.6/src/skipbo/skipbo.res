@@ -1,83 +1,83 @@
 #Allgemein
-sprachekuerzel=EN
+sprachekuerzel=DE
 ok=Ok
-cancel=Cancel
-warnung=Warning
-beendet=terminated.
-fehler=Rrror
-inkompartible_version=Inkompatible Version.
-spiel=Game
-spieler=The player
+cancel=Abbrechen
+warnung=Warnung
+beendet=beendet.
+fehler=Fehler
+inkompartible_version=Inkompartible Version.
+spiel=Spiel
+spieler=Spieler
 
 
 #Computerspieler
-deadlock1=The game was terminated automatically because of a deadlock.
+deadlock1=Das Spiel wurde wegen eines Deadlocks automatisch beendet.
 
 #DialogSpielFinden
-title1=Find server
+title1=Server finden
 name1=Name:
-adresse1=Server address:
+adresse1=Serveradresse:
 port1=Port:
 
 #SkipBo
-ihr_zug=Your turn
-hat_gewonnen=has won.
-verbindung_getrennt=Connection to the server was terminated:
-zug_beendet=Your turn is over
-frage2=A game runs straight.\nNevertheless terminate?
-msg2=The game is by\ 
-serverstart_fehlgeschlagen=Server start failed:
-serverstart_erfolgreich=Server successfully started.
-msg21=This functionality presupposes Java Runtume starting from version 1.4\nAt present used Java run time has version:
-msg22=\nThe newest versions of Java Runtime can you download from http://www.java.com
-msg23=Abort current game?
-msg24=The game is by\ 
-msg25=Server stopped on the instruction of the user
-msg26=Please enter the server address:
-msg27=Enter the name:
-msg28=You are already connected with a server.
-msg29=Connecting...
-msg210=Connect failed:\ 
-msg211=The game cannot be started.
+ihr_zug=Ihr Zug
+hat_gewonnen=hat gewonnen.
+verbindung_getrennt=Verbindung zum Server wurde getrennt:
+zug_beendet=Ihr Zug ist beendet
+frage2=Ein Spiel läuft gerade.\nTrotzdem beenden?
+msg2=Das Spiel wurde von
+serverstart_fehlgeschlagen=Serverstart fehlgeschlagen:
+serverstart_erfolgreich=Server erfolgreich gestartet.
+msg21=Diese Funktionalitaet voraussetzt Java Runtume ab Version 1.5\nDerzeit verwendete Java Runtime hat Version:
+msg22=\nDie neueste Versionen von Java Runtime können Sie unter http://java.sun.com/j2se runterladen.
+msg23=Aktuelles Spiel beenden?
+msg24=Das Spiel wurde von\ 
+msg25=Server gestoppt auf den Befehl des Benutzers
+msg26=Serveradresse eingeben
+msg27=Alias eingeben:
+msg28=Sie sind bereits mit einem Server verbunden.
+msg29=Verbindungsaufbau...
+msg210=Verbundungsaufbau gescheitert:\ 
+msg211=Das Spiel kann nicht gestartet werden.
 
 #SkipBoFenster
-msg30=\ was added.
-item30=Find internet game
-item31=Look in the Internet for opponents
-item32=Connect with well-known server 
-tooltip32=Manually provide a connection with the well-known server
-item33=Terminate the game
-tooltip33=Terminate current game
-item34=Start internet game
-tooltip34=Skip-Bo start and register it in Internet
-item35=Start Skip-Bo server
-tooltip35=Begin the Skip-Bo game and wait on others players (with manual connection establishment)
-hilfe=Help
-Spielregeln=Rules
+msg30=\ ist hinzugekommen.
+item30=Internet Spiel finden
+item31=Im Internet nach Gegenspieler suchen
+item32=Server manuell suchen
+tooltip32=Mit dem bekannten Server eine Verbindung manuell erstellen
+item33=Spiel beenden
+tooltip33=Aktuelles Spiel beenden.
+item34=Internet Spiel starten
+tooltip34=Skip-Net Server lokal starten und ihn im Internet bekanntgeben
+item35=Skip-Net Server starten
+tooltip35=Skip-Net Spiel beginnen und auf andere Mitspieler warten (mit manuelle Verbindungsaufbau)
+hilfe=Hilfe
+Spielregeln=Spielregeln
 Info=Info
-Nachrichtenausgabe=Messages
-item36=Play against the computer
-info_text=Skip-Bo Version 1.5.2\nCopyright 2001-2004 Paul Burlov
+Nachrichtenausgabe=Nachrichtenausgabe
+item36=Gegen Computer spielen
+info_text=Skip-Net Version 1.7.0\n 2001-2009 Paul Burlov\nThis product includes software developed by The Apache Software Foundation (http://www.apache.org/)
 
 #SkipBoUrlCommunicator
-err40=The started server cannot be registered!
+err40=Der gestartete Server kann nicht registriert werden!
 
 #SpieleranzahlDialog
-title50=Desired number of players
-text50=Number of players
+title50=Gewünschte Spieleranzahl
+text50=Spieleranzahl
 
 #SpielRegeln
-spielregeln=Skip-Bo rules
+spielregeln=Spielregeln von Skip-Bo
 
 #WebConnectroFrame
-title70=Skip-Bo finder
-title71=Found Skip-Bo servers
-verbinden=Connect with server
-tooltip70=Connect with selected server
-aktualisieren=Refresh list
-text70=Look for servers for:\ \ 
-fehler70=Connection fails:\n
-players=players
+title70=Skip-Net finder
+title71=Gefundene Skip-Net Servers
+verbinden=Mit Server verbinden
+tooltip70=Mit dem ausgewählten Server verbinden
+aktualisieren=Liste aktualisieren
+text70=Server suchen für:\ \ 
+fehler70=Verbindungversuch fehlgeschlagen:\n
+players=Spielern
 
 #Connector
 err80=Interne Server-Error.
@@ -86,9 +86,9 @@ err80=Interne Server-Error.
 err90=Inkompatible Version.
 
 #SkipBoServer
-msg100=\ is in turn.
-msg100_1=The maximum number of players was reached.
-msg100_2=A player with the name\ 
-msg100_3=\ is already connected.
-msg100_4=Connection to the player\ 
-msg100_5=\ was broken.
+msg100=\ ist an der Reihe.
+msg100_1=Die maximale Spieleranzahl wurde erreicht.
+msg100_2=Ein Spieler mit dem Namen\ 
+msg100_3=\ ist bereits angemeldet.
+msg100_4=Verbindung zum Spieler\ 
+msg100_5=\ wurde unterbrochen.

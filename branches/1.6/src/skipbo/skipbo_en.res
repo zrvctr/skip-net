@@ -44,8 +44,8 @@ msg211=The game cannot be started.
 msg30=\ was added.
 item30=Find internet game
 item31=Look in the Internet for opponents
-item32=Connect with well-known server 
-tooltip32=Manually provide a connection with the well-known server
+item32=Connect with known server 
+tooltip32=Manually provide a connection with the known server
 item33=Terminate the game
 tooltip33=Terminate current game
 item34=Start internet game
@@ -57,7 +57,7 @@ Spielregeln=Rules
 Info=Info
 Nachrichtenausgabe=Messages
 item36=Play against the computer
-info_text=Skip-Net Version 1.6.0\n2001-2008 Paul Burlov
+info_text=Skip-Net Version 1.7.0\n2001-2009 Paul Burlov\nThis product includes software developed by The Apache Software Foundation (http://www.apache.org/)
 
 #SkipBoUrlCommunicator
 err40=The started server cannot be registered!
