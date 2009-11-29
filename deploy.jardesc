@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+    <jar path="D:/develop/skipbo.jar"/>
+    <options overwrite="false" compress="true" exportErrors="false"
+        exportWarnings="true" saveDescription="true"
+        descriptionLocation="/SkipBo/deploy.jardesc"
+        useSourceFolders="false" buildIfNeeded="true"/>
+    <manifest manifestVersion="1.0" usesManifest="true"
+        reuseManifest="false" saveManifest="false"
+        generateManifest="true" manifestLocation="" mainClassHandleIdentifier="=SkipBo/SRC&lt;skipbo{SkipBo.java[SkipBo">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false">
+        <file path="/SkipBo/readme_en.txt"/>
+        <javaElement handleIdentifier="=Burlov/src&lt;com.burlov.swing"/>
+        <javaElement handleIdentifier="=SkipBo/SRC&lt;skipbo.sound"/>
+        <file path="/SkipBo/skipbo.gif"/>
+        <file path="/SkipBo/SKIPBO.ICO"/>
+        <file path="/SkipBo/skipbo.bat"/>
+        <javaElement handleIdentifier="=SkipBo/SRC&lt;skipboserver"/>
+        <javaElement handleIdentifier="=SkipBo/SRC&lt;skipbo"/>
+        <javaElement handleIdentifier="=SkipBo/SRC&lt;skipbo.images"/>
+        <file path="/SkipBo/readme_de.txt"/>
+        <javaElement handleIdentifier="=Burlov/src&lt;com.burlov.net"/>
+    </selectedElements>
+</jardesc>
