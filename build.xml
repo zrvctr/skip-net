@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+
+<project default="build"  name="Skip-Net">
+
+	<property name="src.dir" value="src"></property>
+	<property name="build.dir" value="build"></property>
+	<property name="dist.dir" value="dist"></property>
+	
+	<path id="cp">
+		<fileset dir="lib">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="libext" includes="*.jar">
+		</fileset>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+	
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="cp" debug="true">
+			<exclude name="**/test/*"/>
+		</javac>
+	</target>
+	
+	<target name="distri_de">
+		<unzip dest="${build.dir}">
+			<fileset dir="lib" includes="*.jar"></fileset>
+		</unzip>
+		<delete dir="${build.dir}/META-INF"></delete>
+		<buildnumber/>
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+			</fileset>
+		</copy>
+		<copy file="${src.dir}/skipbo/skipbo_de.res" tofile="${build.dir}/skipbo/skipbo.res" overwrite="true"></copy>
+		  <copy file="${src.dir}/skipbo/spielregeln_de.txt" tofile="${build.dir}/skipbo/spielregeln.txt" overwrite="true">
+		  </copy>
+
+		<tstamp></tstamp>
+		<jar destfile="./skipnet_de.jar" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="skipbo.SkipBo"/>
+				<attribute name="Create-Date" value="${TODAY}"/>
+			</manifest>
+		</jar>
+		<signjar jar="./skipnet_de.jar" keystore="burlov.keystore" storepass="mnogoburlov" alias="burlov"/>
+		<copy file="./skipnet_de.jar" tofile="./skipbo.jar" overwrite="true"></copy>
+		  <zip destfile="skipnet_de.zip" update="true">
+		    <fileset dir="." 
+		    	includes="APACHE-LICENSE.txt, APACHE-NOTICE.txt, readme_de.txt,skipnet.bat,skipnet.exe,skipnet.gif,skipnet.ico,skipbo.jar,skipnet_de.jnlp"/>
+		  </zip>
+	</target>
+	
+	<target name="build">
+		<antcall target="clean"></antcall>
+		<antcall target="compile"></antcall>
+		<antcall target="distri_de"></antcall>
+		<antcall target="distri_en"></antcall>
+		<antcall target="clean"></antcall>
+	</target>
+	
+	<target name="distri_en">
+		<unzip dest="${build.dir}">
+			<fileset dir="lib" includes="*.jar"></fileset>
+		</unzip>
+		<delete dir="${build.dir}/META-INF"></delete>
+		<buildnumber/>
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+			</fileset>
+		</copy>
+		<copy file="${src.dir}/skipbo/skipbo_en.res" tofile="${build.dir}/skipbo/skipbo.res" overwrite="true"></copy>
+		  <copy file="${src.dir}/skipbo/spielregeln_en.txt" tofile="${build.dir}/skipbo/spielregeln.txt" overwrite="true">
+		  </copy>
+
+		<tstamp></tstamp>
+		<jar destfile="./skipnet_en.jar" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="skipbo.SkipBo"/>
+				<attribute name="Create-Date" value="${TODAY}"/>
+			</manifest>
+		</jar>
+		<signjar jar="./skipnet_en.jar" keystore="burlov.keystore" storepass="mnogoburlov" alias="burlov">
+		</signjar>
+		<copy file="./skipnet_en.jar" tofile="./skipbo.jar" overwrite="true"></copy>
+	  <zip destfile="skipnet_en.zip" update="true">
+	    <fileset dir="." 
+	    	includes="APACHE-LICENSE.txt, APACHE-NOTICE.txt, readme_en.txt,skipnet.bat,skipnet.exe,skipnet.gif,skipnet.ico,skipbo.jar,skipnet_en.jnlp"/>
+	  </zip>
+	</target>
+	
+</project>
