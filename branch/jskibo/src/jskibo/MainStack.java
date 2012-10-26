@@ -1,5 +1,6 @@
 package jskibo;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public final class MainStack extends CardStack {
@@ -15,36 +16,47 @@ public final class MainStack extends CardStack {
 	    return mainStack;
 	  }
 	  // Singleton-End
-	
-	
+          
 	private MainStack() {
 		System.out.println("MainStack gets it's only instance");
 		
-		this.Cards = new Card[main_stack_size];
+		Cards = new ArrayList<>(main_stack_size);
 		for (int i=0;i<main_stack_size-18;i++) { // jokersize is 18;
-			this.Cards[i] = new Card (i%12 +1);
+                Cards.add(new Card (i%12 +1));
 		}
 		for (int i=main_stack_size-18;i < main_stack_size;i++) {
-		this.Cards[i]=new Card(13);
+		Cards.add(new Card (13));
 		}
 		this.shuffle();
-		this.InStack = main_stack_size-1;
+		this.inStack = main_stack_size-1;
 	}
+        
+        public Card takeCard() {
+     
+           Card card;
+            try {
+              card = Cards.get(inStack);    
+            }   catch (Exception e) {
+                    System.out.println("you cannot take a card from an empty Stack "+e);
+                    return null;
+                }
+        inStack--;
+        return card;
+        } 
+        
+        
 	
-	public void shuffle() {
+	private void shuffle() {
 		 Random generator = new Random();
 		 int j;
 		 for (int i=main_stack_size-1;i > 0 ;i--) {
 			 j = generator.nextInt(i);
-			 Card t = Cards[j];
-			 Cards[j] = Cards[i];
-			 Cards[i] = t;
+			 Card t = Cards.get(j);
+			 Cards.set(j, Cards.get(i));
+			 Cards.set(i,t);
 		 }
 	}
-	@Override 
-	public void dropCard(Card card) {
-	System.out.println("You cannot drop something on the MainStack");	
-	}
+        
 }
 
 

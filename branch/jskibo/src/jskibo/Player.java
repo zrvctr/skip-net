@@ -1,49 +1,53 @@
 package jskibo;
 
-public class Player {
+/**
+ * 
+ * 
+ * @author uplink
+ */
 
-	public Player() {
-                PlayerNumber = CurrentPlayers++;
-		Hand = new Card[5];
-		SupportStacks = new OpenCardStack[4];
-		for (int i=0; i<5; i++) {
-			this.draw();
-		}
-                
+ public class Player {
+
+	public Player(int pnum) {
+		PlayerNumber = pnum;
+		SupportStacks = new SupportStack[4];
+                PlayerStack PlayerStack = new PlayerStack();
+		try {
+			this.draw();    
+		} catch (Exception e) {
+			System.out.println("Exception occord "+e);
+                }
+		        System.out.println("Cards left " + MainStack.getInstance().getCardsLeft());
 	}
 	
-	private void draw() {
-		if (CardsInHand < 5) {
+        
+	protected final void draw() {
+		while (CardsInHand < 5)
+		 {
 			Hand[CardsInHand] = MainStack.getInstance().takeCard();
 			System.out.println("Player " + PlayerNumber + " Drew " + Hand[CardsInHand].getValue());
 			CardsInHand++;
 		}
-		
 	}
-	public void drop(int CardNumber) {
-	//0-4 are Cards in the Hand
-	// 5-8 are the SupportStacks
-        // 9 is the SkipoStack
-		if(CardNumber>=0 & CardNumber<=4 & CardsInHand >= CardNumber)
-		{
-			
-		}
-		else if(CardNumber>=5 & CardNumber<=8 & SupportStacks[CardNumber] != null) {
-		
-		}
-		else {
-		System.out.println("You are a Silly bugga");
-		}
+        
+	public boolean drop(Card card, DropStack dropStack) {
+		return dropStack.dropCard(card);
 	}
+	
 	public int getPoints() {
 		return this.points;
 	}
-	
-	
-	protected OpenCardStack[] SupportStacks;
-	private  Card[] Hand;
+        
+	public void makeMove() {
+		// Here everything is done what a player can do in a trun
+	}
+		
+	protected SupportStack[] SupportStacks;
+	private  Card[] Hand = new Card[5];
 	private byte CardsInHand=0;
 	private int points=0;
-        static int CurrentPlayers=0;
-        private int PlayerNumber;
+	private int PlayerNumber;
+	private boolean hasWon=false;
+
 }
+

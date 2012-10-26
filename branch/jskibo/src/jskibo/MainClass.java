@@ -4,12 +4,16 @@ package jskibo;
 public class MainClass {
 	public static void main (String[] args) {
 	System.out.println 		("MainClass started");
-	CardStack Stack =  MainStack.getInstance();
-	System.out.println		("MainStack"+MainStack.getInstance()+"was created");
-	Player Player1 = new Player();
-	System.out.println 		("Player 2 draws");
-	Player Player2 = new Player();
 	
+	GameClass Game = new GameClass();
+        for (int i=0;i<4;i++) {
+                Game.CreatePlayer();
+            }
+       // while (Game.isFinished==false) {
+       //    Game.nextTurn();
+       // }
+            
+        
 	//Player1.SupportStacks[1].viewCard();
 	
 //	for (int i=0; i<162;i++) {
