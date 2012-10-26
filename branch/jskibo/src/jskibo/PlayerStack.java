@@ -20,7 +20,7 @@ public class PlayerStack extends ViewableStack {
             }
         }
     
-	public boolean discard(DropStack dropstack) {
+	public boolean playCard(DropStack dropstack) {
 
             Card card = Cards.peek();
             if(dropstack.dropCard(card)) {
