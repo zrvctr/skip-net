@@ -11,20 +11,20 @@ package jskibo;
  */
 public class PlayerStack extends ViewableStack {
 
-	public PlayerStack() {
+        public PlayerStack() {}
+    
+        public PlayerStack(MainStack Stack) {
 	
-        for (int i=0; i<10;i++) {
-	Cards.add(MainStack.getInstance().takeCard());
-        }
-            System.out.println("PlayerStack of " + GameClass.PlayerInGame + 
-                    " gets created" );
+            for (int i=0; i<10;i++) {
+                Cards.push(Stack.takeCard());
+            }
         }
     
 	public boolean discard(DropStack dropstack) {
 
-	Card card = Cards.get(inStack);
-	if(dropstack.dropCard(card)) {
-		inStack--;
+            Card card = Cards.peek();
+            if(dropstack.dropCard(card)) {
+		Cards.pop();
 		return true;
 	} 
 		return false;

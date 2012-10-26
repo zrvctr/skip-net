@@ -9,8 +9,7 @@ public class DropStack extends ViewableStack {
     
    protected boolean dropCard(Card card) {
         if(canBeDropped(card)) {
-            Cards.add(card);
-            inStack++;
+            Cards.push(card);
             return true;
         } else {
             return false;

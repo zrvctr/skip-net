@@ -1,14 +1,13 @@
 package jskibo;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 
 public class CardStack {
-         protected ArrayList<Card> Cards = new ArrayList<Card>();
-         protected int inStack;
-
+         protected Stack<Card> Cards = new Stack<Card>();
+         
       
         public int getCardsLeft () {
-            return this.inStack+1;
+            return Cards.size();
         }
 }

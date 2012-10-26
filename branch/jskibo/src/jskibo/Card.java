@@ -2,30 +2,23 @@ package jskibo;
 
 
 public class Card {
-	private byte CardValue;
-	public boolean isJoker = false;  
-	protected Card(int cardval) {
+	private int cardValue;
+	
+        protected Card(int cardval) {
 		if (cardval > 1 || cardval < 14) {
-			CardValue = (byte)cardval;
-                        if (cardval==13) {
-                        isJoker=true;   
-                        }
-		} else  {
+			cardValue = cardval;
+		} else {
                     System.out.println("You cannot stick an illigal Card in here");
                 }
                     
 	}
 	
-	public byte getValue() {
-		return this.CardValue;
+	public int getValue() {
+		return cardValue;
 	}
-        void transformJoker(int cardval) {
-            if(isJoker) {
-                CardValue = (byte)cardval;
-            }
-        }
+      
         
         boolean isJoker() {
-            return isJoker;
+            return cardValue==13;
         }
 }

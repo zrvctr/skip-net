@@ -22,24 +22,23 @@ public class GameClass {
      *
      */
     
-    protected MainStack Stack = MainStack.getInstance();
+    protected MainStack Stack = new MainStack();
     protected ArrayList<Player> Players = new ArrayList<>() ;
     public boolean isFinished = false;
        
-    static int PlayerInGame=0;
     static int CurrentPlayer=0;
     
-    public Player CreatePlayer() {        
-        Players.add(new Player(++PlayerInGame));
-        return Players.get(PlayerInGame-1);
+    public Player CreatePlayer() {
+        Players.add(new Player(Stack,Players.size()+1));
+        return Players.get(Players.size()-1);
     }
 
-    public static int getPlayerInGame() {
-        return PlayerInGame;
+    public int getPlayerInGame() {
+        return Players.size();
     }
     
     public void nextTurn() {
-        if(CurrentPlayer>=PlayerInGame) {
+        if(CurrentPlayer>=Players.size()) {
             CurrentPlayer = 0;
         }
         Players.get(CurrentPlayer++).makeMove();
