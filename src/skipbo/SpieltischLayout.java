@@ -135,20 +135,17 @@ public class SpieltischLayout implements LayoutManager2
 	{
 		JLabel label = (JLabel) labels.get(SPIELERNAME_LINKS);
 		int labelbreite = (int) kartenfeldhoehe;
-		label.setSize(labelbreite, 25);//Labelbreite beschränken
-		//    label.setMaximumSize(new
-		// Dimension(labelbreite,label.getSize().height));//Labelbreite
-		// beschränken
+		label.setSize(labelbreite, 25);
 		int x = (int) (breite * positionX_kartenfeld_links);
 		int y = (int) (hoehe * positionY_kartenfeld_links - label.getSize().height);
 		label.setLocation(x, y);
 		label = (JLabel) labels.get(SPIELERNAME_RECHTS);
-		label.setSize(labelbreite, 25);//Labelbreite beschränken
+		label.setSize(labelbreite, 25);
 		x = (int) (breite * positionX_kartenfeld_rechts);
 		y = (int) (hoehe * positionY_kartenfeld_rechts - label.getSize().height);
 		label.setLocation(x, y);
 		label = (JLabel) labels.get(SPIELERNAME_OBEN);
-		label.setSize(labelbreite, 25);//Labelbreite beschränken
+		label.setSize(labelbreite, 25);
 		x = (int) (breite * positionX_kartenfeld_oben + ((kartenfeldbreite * 5) - labelbreite) / 2);
 		y = (int) (hoehe * positionY_kartenfeld_oben - label.getSize().height);
 		label.setLocation(x, y);

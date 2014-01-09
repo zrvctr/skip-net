@@ -2,13 +2,21 @@ package skipbo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -358,7 +366,9 @@ public class SkipBoFenster extends JFrame
 				tfEingabe_actionPerformed(e);
 			}
 		});
+		
 		menuSpiel.setText(Resource.getString("spiel"));
+		
 		itemInternetSpielFinden.setText(Resource.getString("item30"));
 		itemInternetSpielFinden.setToolTipText(Resource.getString("item31"));
 		itemInternetSpielFinden.addActionListener(new ActionListener()
@@ -459,6 +469,58 @@ public class SkipBoFenster extends JFrame
 		menuHilfe.add(itemSpielregel);
 		menuHilfe.add(itemInfo);
 		mb.add(menuHilfe);
+		JLabel lab = new JLabel("<html><a href=\"http://skipoid-nexus.appspot.com\">"+ Resource.getString("playOnline") + "</a></html>");//Resource.getString("onlineGame"));
+		lab.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(Desktop.isDesktopSupported()){
+					try {
+						Desktop.getDesktop().browse(new URI("http://skipoid-nexus.appspot.com"));
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (URISyntaxException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		lab.setToolTipText("http://skipoid-nexus.appspot.com");
+//		JButton btOnlineGame = new JButton("onlineGame");
+//		btOnlineGame.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				Desktop.isDesktopSupported()
+//			}
+//		});
+		mb.add(Box.createHorizontalGlue());
+		mb.add(lab);
 		setJMenuBar(mb);
 	}
 
