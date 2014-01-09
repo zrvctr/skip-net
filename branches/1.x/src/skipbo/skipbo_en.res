@@ -57,7 +57,8 @@ Spielregeln=Rules
 Info=Info
 Nachrichtenausgabe=Messages
 item36=Play against the computer
-info_text=Skip-Net Version 1.7.0\n2001-2009 Paul Burlov\nThis product includes software developed by The Apache Software Foundation (http://www.apache.org/)
+playOnline=NEW! Play Skip-Net browser game
+info_text=Skip-Net Version 1.7.1\n2001-2013 Paul Burlov\nThis product includes software developed by The Apache Software Foundation (http://www.apache.org/)
 
 #SkipBoUrlCommunicator
 err40=The started server cannot be registered!

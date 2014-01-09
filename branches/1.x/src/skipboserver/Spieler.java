@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 /**
- * Überschrift: Beschreibung: Copyright: Copyright (c) 2001 Organisation:
+ *Beschreibung: Copyright: Copyright (c) 2001 Organisation:
  * 
  * @author @version 1.0
  */
