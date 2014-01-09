@@ -22,7 +22,7 @@
 	</target>
 	
 	<target name="compile">
-		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="cp" debug="true">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="cp" debug="true" target="1.6">
 			<exclude name="**/test/*"/>
 		</javac>
 	</target>

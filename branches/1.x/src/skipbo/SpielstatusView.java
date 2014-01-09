@@ -2,10 +2,6 @@ package skipbo;
 
 import java.util.*;
 
-/**
- * Wrapper-Classe für den Spielstand, mit getter-Methoden für eigene und fremde
- * Kartenfelder
- */
 public class SpielstatusView
 {
 
@@ -91,7 +87,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Liefert 4 Werte die für Ablegekarten stehen
+	 * Liefert 4 Werte die fï¿½r Ablegekarten stehen
 	 */
 	public int[] getAblegekarten()
 	{
@@ -107,7 +103,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Liefert Array mit 4 Werten, die Hilfsstapel repräsentieren 0 = leeres
+	 * Liefert Array mit 4 Werten, die Hilfsstapel representieren 0 = leeres
 	 * Feld
 	 */
 	public int[] getHilfskarten()
@@ -120,7 +116,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Leifert Array mit 5 Werten, die Handkarten repräsentieren 0 = leeres
+	 * Leifert Array mit 5 Werten, die Handkarten representieren 0 = leeres
 	 * Feld
 	 */
 	public int[] getHandkarten()
@@ -129,7 +125,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Liefert zweidimensionale Array: äußere Array: repräsentiert alle Gegner
+	 * Liefert zweidimensionale Array: ausere Array: representiert alle Gegner
 	 * innere Array: 5 sichtbaren Karten von Gegenspieler (Spielstapel wird
 	 * durch 5-te Wert dargestellt)
 	 */
@@ -159,7 +155,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Gibt Name des Spielers zurück
+	 * Gibt Name des Spielers zurueck
 	 */
 	public String getEigenname()
 	{
@@ -192,7 +188,7 @@ public class SpielstatusView
 			if(feldgruppen[i].getReihenfolge() == 0) anfangsspieler = i;
 		}
 		//Falls diese Spieler letze in der Reihe ist dann, den Karten von
-		// allerersten Spieler zurückgeben
+		// allerersten Spieler zurï¿½ckgeben
 		return getGegnerkarten(anfangsspieler);
 	}
 
@@ -225,7 +221,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Gibt den Index der Handkarte die am meisten Plätze belegt
+	 * Gibt den Index der Handkarte die am meisten Plaetze belegt
 	 */
 	public int getMeistVorhandeneHandkarte()
 	{
@@ -254,7 +250,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Gibt den Index der Ablegekarte die am meisten Plätze belegt
+	 * Gibt den Index der Ablegekarte die am meisten Plaetze belegt
 	 */
 	public int getMeistVorhandeneAblegekarte()
 	{
@@ -286,7 +282,7 @@ public class SpielstatusView
 		int wert = 0;
 		int index = -1;
 		for(int j = 0; j < array.length; j++)
-		{// Alles außer Joker zählen
+		{// Alles auï¿½er Joker zï¿½hlen
 			if(array[j] > wert && array[j] != Karte.JOKER)
 			{
 				wert = array[j];
@@ -294,7 +290,7 @@ public class SpielstatusView
 			}
 		}
 		if(wert == 0)
-		{// wenn nichts außer Joker da ist, dann Joker nehmen
+		{// wenn nichts auï¿½er Joker da ist, dann Joker nehmen
 			for(int j = 0; j < array.length; j++)
 			{
 				if(array[j] > wert)
@@ -334,7 +330,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Berechnent nächstniedrige Wert
+	 * Berechnent naechstniedrige Wert
 	 */
 	static public int decrementWert(int kartenwert)
 	{
@@ -343,7 +339,7 @@ public class SpielstatusView
 	}
 
 	/**
-	 * Berechnent nächsthöhere Wert
+	 * Berechnent naechsthoehere Wert
 	 */
 	static public int incrementWert(int kartenwert)
 	{
